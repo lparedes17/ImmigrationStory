@@ -24,7 +24,9 @@ tw-passage img {
 tw-passage{
   letter-spacing:
 	4px;
-	background-color:black;}
+	background-color:black;
+	font-family:arial;
+  font-size: 2vh; font-size:2vw; font-size:2min; line-height:normal;}
 tw-story{
   background-color: pink;
   color: white;}
@@ -34,18 +36,6 @@ tw-link{
 .enchantment-link:hover,
 tw-link:hover{
   color:red;
-}
-tw-passage{
-  font-family:arial;
-}
-
-tw-passage{
-  font-size: 2vh; font-size:2vw; font-size:2min; line-height:normal
-}
-
-tw-story[tags~=flower]{
-  background-image: url("https://cherryblossomwatch.com/wp-content/uploads/2019/04/cherry-blossoms-washington-dc-april-01-2019-418x.jpg");
-  background-size:cover;
 }
 
 tw-sidebar tw-icon.redo{
@@ -144,28 +134,47 @@ tw-story[tags~=rey]{
   background-image: url(https://www.themonitor.com/wp-content/uploads/sites/60/2018/11/8a403ec01e95acc10ca8aee8fcfedd3b.jpg);
   background-size:cover;
   
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">//var audio = document.createElement('audio');
+}
+
+tw-story[tags~=arrested]{
+  background-image: url(https://www.washingtonpost.com/resizer/XcTba-C9EX0q-pFdENbfcpyssWQ=/1440x0/smart/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/FZ2BPKGQ7II6TJRABKIWK3L5WY.jpg);
+  background-size:cover;
+}
+tw-story[tags~=back]{
+  background-image: url(https://d3i6fh83elv35t.cloudfront.net/newshour/app/uploads/2014/03/desert.jpg);
+  background-size:cover;
+}
+tw-story[tags~=hotel]{
+  background-image: url(https://foreignpolicy.com/wp-content/uploads/2018/07/4_gettyimages-175608746.jpg);
+  background-size:cover;
+}
+
+tw-passage[tags~=dot] {
+  height: 25px;
+  width: 25px;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block;
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">//var audio = document.createElement('audio');
 //audio.src = 'https://lindafiles.yolasite.com/resources/Roxas.mp3';
 //audio.loop = true;
 //audio.play();
-</script><tw-passagedata pid="1" name="Our Story" tags="" position="25,225" size="100,100">Welcome to our story! You must get to the U.S through the Mexican Border.
+</script><tw-passagedata pid="1" name="Our Story" tags="back" position="29,220" size="100,100">Welcome to our story! You must get to the U.S through the Mexican Border.
 
-[[Press here to Start-&gt;Your Story]]</tw-passagedata><tw-passagedata pid="2" name="Your Story" tags="" position="200,225" size="100,100">(set: $health to 100)
-(set: $strength to 100)
-(set: $r to (random: 1,5))
+[[Press here to Start-&gt;Your Story]]</tw-passagedata><tw-passagedata pid="2" name="Your Story" tags="back" position="203,217" size="100,100">(set: $health to 100,$strength to 100,$r to (random: 1,5))
 You are {
 (if: $r is 1)[from El Savador. Your mom has cancer and needs someone to take care of her. She lives in California. You start the journey with $health health and $strength stength.
 
-[[Stary Your Story-&gt;Tapachula]]
+[[Start Your Story-&gt;Tapachula]]
 ]
-(else-if: $r is 2)[from El Savador. You have been kicked out from the U.S
-from ICE. Your family is worried for you and you need to get back to them. You leave with $health health and $strength stength.
+(else-if: $r is 2)[(set: $ra to 2)from El Savador. You have been kicked out from the U.S from ICE. Your family is worried for you and you need to get back to them. You leave with $health health and $strength stength.
 
 [[Start Your Story-&gt;Tenosique]]
 ]
 (else-if: $r is 3)[from El Savador. Your dream is to graduate to help out your family at home. You leave with $health health and $strength stength.
 
-[[Stary Your Story-&gt;Tapachula]]
+[[Start Your Story-&gt;Tapachula]]
 ]
 (else-if: $r is 4)[from El Savador. You want to achieve the American dream so that you can get out of the poverty you are in. You leave with $health health and $strength stength.
 
@@ -173,77 +182,62 @@ from ICE. Your family is worried for you and you need to get back to them. You l
 ]
 (else:)[from El Savador. You need to work to get back your father medicine to cure his illness. You leave with $health health and $strength stength.
 
-[[Stary Your Story-&gt;Tapachula]]]}</tw-passagedata><tw-passagedata pid="3" name="Tapachula" tags="tapachula" position="400,175" size="100,100">(set: $miles to 326)
+[[Start Your Story-&gt;Tapachula]]]}</tw-passagedata><tw-passagedata pid="3" name="Tapachula" tags="tapachula" position="405,175" size="100,100">(set: $miles to 326)
 (put: State.variables[&quot;health&quot;] - 30 into $health ,State.variables[&quot;strength&quot;] - 40 into $strength)
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Tapa.png&quot;&gt;
 
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
-
-You traveled $miles miles. You have $health health and $strength strength. It was a long journey. Do you want rest up to [[Stay In -&gt; Hotel]] a hotel before going to [[Oaxaco]] or do you want to continue?</tw-passagedata><tw-passagedata pid="4" name=" Hotel" tags="" position="550,275" size="100,100">(set:$health to 100)
+You traveled $miles miles. You have $health health and $strength strength. It was a long journey. Do you want rest up to [[Stay In -&gt; Motel]] a hotel before going to [[Oaxaco]] or do you want to continue?</tw-passagedata><tw-passagedata pid="4" name=" Motel" tags="hotel" position="626,257" size="100,100">(set:$health to 100)
 (set:$strength to 100)
 You have reached to a small motel and sleeped in. You have $strength strength and $health health. You set off to [[Oaxaco]].</tw-passagedata><tw-passagedata pid="5" name="Oaxaco" tags="oax" position="675,75" size="100,100">(put: State.variables[&quot;miles&quot;] +420 into $miles, State.variables[&quot;health&quot;]-50 into $health, 
 State.variables[&quot;strength&quot;]-60 into $strength)
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
-You have traveled $miles miles. You have exausted yourself. Your health is $health and strength is $strength. You must rest up till you make the journey. Go to [[Motel]].</tw-passagedata><tw-passagedata pid="6" name="Motel" tags="" position="806,100" size="100,100">Before you meet buy a room to sleep in, you encounter a group that has offered you to come with them. They promised you that they would provide transportation to send you to your destination. Do you (link-goto:&quot;take it&quot;,&quot;Nogales&quot;) or (link:&quot;leave it&quot;)[You say no and continue to [[Puebla]]]</tw-passagedata><tw-passagedata pid="7" name="Nogales" tags="nog" position="1368,132" size="100,100">&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
-They drop of you off here because of how they didn&#39;t have any passport to drive you through the border so they drop you off. You walk to the border fence and see that the border patrol is face the other direction where you at. Do you [[go for it-&gt;You are kidnapped]] or [[wait-&gt;You made it!]]</tw-passagedata><tw-passagedata pid="8" name="Puebla" tags="puebla" position="825,272" size="100,100">(put:State.variables[&quot;miles&quot;] + 330 into $miles, State.variables[&quot;health&quot;] -30 into $health, State.variables[&quot;strength&quot;] - 40 into $strength)
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
-You have arrived to Puebla. You traveled $miles miles. You have $health health and $strength strength. You decided to continue to [[Mexico City]] because how not far it is.</tw-passagedata><tw-passagedata pid="9" name="You are kidnapped" tags="" position="1576,47" size="100,100">(put: State.variables[&quot;r&quot;] into $r)
-
-{(if: $r is 1)[Your mom died from cancer. You have been sent back home, hopeless. You killed yourself the next month.]
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Oax.png&quot;&gt;
+You have traveled $miles miles. You have exausted yourself. Your health is $health and strength is $strength. You must rest up till you make the journey. Go to [[Motel]].</tw-passagedata><tw-passagedata pid="6" name="Motel" tags="hotel" position="846,88" size="100,100">Before you meet buy a room to sleep in, you encounter a group that has offered you to come with them. They promised you that they would provide transportation to send you to your destination. Do you (link-goto:&quot;take it&quot;,&quot;Nogales&quot;) or (link:&quot;leave it&quot;)[You say no and continue to [[Puebla]]]</tw-passagedata><tw-passagedata pid="7" name="Nogales" tags="nog" position="1370,132" size="100,100">&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Nogales.png&quot;&gt;
+They drop of you off here because of how they didn&#39;t have any passport to drive you through the border so they drop you off. You walk to the border fence and see that the border patrol is face the other direction where you at. Do you [[go for it-&gt;You are kidnapped]] or [[wait-&gt;You made it!]]</tw-passagedata><tw-passagedata pid="8" name="Puebla" tags="puebla" position="825,272" size="100,100">(put:State.variables[&quot;miles&quot;] + 330 into $miles, State.variables[&quot;health&quot;] -20 into $health, State.variables[&quot;strength&quot;] - 30 into $strength)
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Puebla.png&quot;&gt;
+You have arrived to Puebla. You traveled $miles miles. You have $health health and $strength strength. You decided to continue to [[Mexico City]] because how not far it is.</tw-passagedata><tw-passagedata pid="9" name="You are kidnapped" tags="arrested" position="1576,47" size="100,100">{(if: $r is 1)[Your mom died from cancer. You have been sent back home, hopeless. You killed yourself the next month.]
 (else-if: $r is 2)[Your family gets deported from the U.S. and were kidnapped by nacros never to be seen again.]
 (else-if:$r is 3)[You failed your family. You and your family end up homeless and die after several years.]
 (else-if:$r is 4)[You tried to go back again but failed. You ended up just doing drugs your whole life.]
 (else:)[Your father ends up dying. You ended up suffering the whole time.]}
-
 You have been kidnapped. 
-
-About 2,800 immigrants get arrested when crossing through the border. You can go to [[Main Menu -&gt;Our Story]] to try out different route.</tw-passagedata><tw-passagedata pid="10" name="You made it!" tags="" position="1595,342" size="100,100">(put: State.variables[&quot;r&quot;] into $r)
-
-{(if: $r is 1)[You helped your mother till she died.]
+You traveled $miles miles.
+About 2,800 immigrants get arrested when crossing through the border. You can go to [[Main Menu -&gt;Our Story]] to try out different route.</tw-passagedata><tw-passagedata pid="10" name="You made it!" tags="back" position="1596,335" size="100,100">{(if: $r is 1)[You helped your mother till she died.]
 (else-if: $r is 2)[Your family is so happy to see you again. However, getting a visa might not be so easy.]
 (else-if:$r is 3)[Your family gets out of poverty.]
 (else-if:$r is 4)[You end up havig a successful job.]
 (else:)[Your father feels better after you send back the medicine to him.]}
-
-[[Our Story&lt;- Go Back]]</tw-passagedata><tw-passagedata pid="11" name="Guadalajara" tags="guad" position="1075,200" size="100,100">(set:$health to 100, $strength to 100)
+You traveled $miles miles.
+[[Our Story&lt;- Go Back]]</tw-passagedata><tw-passagedata pid="11" name="Guadalajara" tags="guad" position="1092,304" size="100,100">(set:$health to 100, $strength to 100)
 
 (put:State.variables[&quot;miles&quot;] + 550 into $miles, $health -60 into $health, $strength - 50 into $strength)
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Guad.png&quot;&gt;
 You have arrived to Gaudalajara. You traveled $miles miles. You have $health health and $strength strength.You decided to rest up because of how long it will take to reach to [[Mazaltan]].</tw-passagedata><tw-passagedata pid="12" name="Mazaltan" tags="maza" position="1210,89" size="100,100">(set:$health to 100, $strength to 100)
 
 (put:State.variables[&quot;miles&quot;] + 550 into $miles, $health -60 into $health, $strength - 50 into $strength)
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
-You have arrived to Mazaltan. You traveled $miles miles. You have $health health and $strength strength.You are exhausted and a driver picked ypu up to leave you at[[Nogales]].</tw-passagedata><tw-passagedata pid="13" name="Mexico City" tags="mexo" position="951,150" size="100,100">(put:State.variables[&quot;miles&quot;] + 130 into $miles, State.variables[&quot;health&quot;] -10 into $health, State.variables[&quot;strength&quot;] - 20 into $strength)
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
-You have arrived to Mexico City. You traveled $miles miles. You have $health health and $strength strength. Do you want to straight through [[Cuidad Juarez]] or [[Guadalajara]]?</tw-passagedata><tw-passagedata pid="14" name="Tenosique" tags="tenosique" position="208,373" size="100,100">(put: State.variables[&quot;health&quot;]-60 to $health)
-(put: State.variables[&quot;strength&quot;]-50 to $strength)
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Maza.png&quot;&gt;
+You have arrived to Mazaltan. You traveled $miles miles. You have $health health and $strength strength.You are exhausted and a driver picked ypu up to leave you at[[Nogales]].</tw-passagedata><tw-passagedata pid="13" name="Mexico City" tags="mexo" position="1000,180" size="100,100">(put:State.variables[&quot;miles&quot;] + 130 into $miles, State.variables[&quot;health&quot;] -10 into $health, State.variables[&quot;strength&quot;] - 20 into $strength)
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Mexo.png&quot;&gt;
+You have arrived to Mexico City. You traveled $miles miles. You have $health health and $strength strength. Do you want to straight through [[Cuidad Juarez]] or [[Guadalajara]]?</tw-passagedata><tw-passagedata pid="14" name="Tenosique" tags="tenosique" position="208,370" size="100,100">(put: State.variables[&quot;health&quot;]-60 into $health,State.variables[&quot;strength&quot;]-50 into $strength)
 (set: $miles to 506)
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
-You traveled $miles miles. You have $health health and $strength strength. You reste up before you go to [[Villahermosa]].</tw-passagedata><tw-passagedata pid="15" name="Villahermosa" tags="villahermosa" position="200,524" size="100,100">(put: State.variables[&quot;miles&quot;] + 130 into $miles)
-(put: State.variables[&quot;health&quot;] +30 into $health)
-(put: State.variables[&quot;strength&quot;] +20 into $strength)
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
-You traveled $miles miles. You have $health health and $strength strength.  You keep going to [[Coatzacoalcos]].</tw-passagedata><tw-passagedata pid="16" name="Coatzacoalcos" tags="coat" position="300,673" size="100,100">(put: State.variables[&quot;miles&quot;] + 100 into $miles)
-(put: State.variables[&quot;health&quot;] -20 into $health)
-(put: State.variables[&quot;strength&quot;] -10 into $strength)
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
-You traveled $miles miles. You have $health health and $strength strength.  Do you want to go to [[Veracruz]] or [[Corboda]]?</tw-passagedata><tw-passagedata pid="17" name="Veracruz" tags="veracruz" position="524,675" size="100,100">(put: State.variables[&quot;miles&quot;] + 170 into $miles)
-(put: State.variables[&quot;health&quot;] -20 into $health)
-(put: State.variables[&quot;strength&quot;] -20 into $strength)
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
-You traveled $miles miles. You have $health health and $strength strength.  You keep going to [[Tampico]].</tw-passagedata><tw-passagedata pid="18" name="Tampico" tags="tamp" position="724,649" size="100,100">(put: State.variables[&quot;miles&quot;] + 480 into $miles)
-(put: State.variables[&quot;health&quot;] -50 into $health)
-(put: State.variables[&quot;strength&quot;] -50 into $strength)
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
-You traveled $miles miles. You have $health health and $strength strength.  You keep going to [[Reynosa]].</tw-passagedata><tw-passagedata pid="19" name="Reynosa" tags="rey" position="1425,453" size="100,100">(put: State.variables[&quot;miles&quot;] + 490 into $miles)
-(put: State.variables[&quot;health&quot;] -50 into $health)
-(put: State.variables[&quot;strength&quot;] -50 into $strength)
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Teno.png&quot;&gt;
+You traveled $miles miles. You have $health health and $strength strength. You reste up before you go to [[Villahermosa]].</tw-passagedata><tw-passagedata pid="15" name="Villahermosa" tags="villahermosa" position="200,523" size="100,100">(put: State.variables[&quot;miles&quot;] + 130 into $miles, State.variables[&quot;health&quot;] +30 into $health, State.variables[&quot;strength&quot;] +20 into $strength)
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Villa.png&quot;&gt;
+You traveled $miles miles. You have $health health and $strength strength.  You keep going to [[Coatzacoalcos]].</tw-passagedata><tw-passagedata pid="16" name="Coatzacoalcos" tags="coat" position="300,673" size="100,100">(put: State.variables[&quot;miles&quot;] + 100 into $miles, State.variables[&quot;health&quot;] -20 into $health, State.variables[&quot;strength&quot;] -10 into $strength)
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Coat.png&quot;&gt;
+You traveled $miles miles. You have $health health and $strength strength.  Do you want to go to [[Veracruz]], [[Corboda]], or [[Rest-&gt;Hotel]] ?</tw-passagedata><tw-passagedata pid="17" name="Veracruz" tags="veracruz" position="658,711" size="100,100">(put: State.variables[&quot;miles&quot;] + 170 into $miles,State.variables[&quot;health&quot;] -20 into $health, State.variables[&quot;strength&quot;] -20 into $strength)
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Vera.png&quot;&gt;
+You traveled $miles miles. You have $health health and $strength strength.  You keep going to [[Tampico]].</tw-passagedata><tw-passagedata pid="18" name="Tampico" tags="tamp" position="872,578" size="100,100">(put: State.variables[&quot;miles&quot;] + 480 into $miles, State.variables[&quot;health&quot;] -35 into $health, State.variables[&quot;strength&quot;] -35 into $strength)
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Tamp.png&quot;&gt;
+You traveled $miles miles. You have $health health and $strength strength.  You rest up before taking the trip to [[Reynosa]].</tw-passagedata><tw-passagedata pid="19" name="Reynosa" tags="rey" position="1423,453" size="100,100">(put: State.variables[&quot;miles&quot;] + 490 into $miles, State.variables[&quot;health&quot;] +50 into $health, State.variables[&quot;strength&quot;] +50 into $strength)
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Rey.png&quot;&gt;
 You are near the border and you see that there border partol facing the other way do you [[go for it-&gt;You are kidnapped]] or [[wait-&gt;You made it!]]
 </tw-passagedata><tw-passagedata pid="20" name="Corboda" tags="corb" position="602,446" size="100,100">(put: State.variables[&quot;miles&quot;] + 220 into $miles)
 (put: State.variables[&quot;health&quot;] -30 into $health)
 (put: State.variables[&quot;strength&quot;] -30 into $strength)
-&lt;img src=&quot;https://lindafiles.yolasite.com/resources/migrant_map.jpg&quot;&gt;
-You traveled $miles miles. You have $health health and $strength strength.  You keep going to [[Puebla]].</tw-passagedata><tw-passagedata pid="21" name="Cuidad Juarez" tags="cuid" position="1346,303" size="100,100">You are near the border and you see that there border partol facing the other way do you [[go for it-&gt;You are kidnapped]] or [[wait-&gt;You made it!]]</tw-passagedata></tw-storydata>
+&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Cord.png&quot;&gt;
+You traveled $miles miles. You have $health health and $strength strength.  You keep going to [[Puebla]].</tw-passagedata><tw-passagedata pid="21" name="Cuidad Juarez" tags="cuid" position="1305,357" size="100,100">&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Cuid.png&quot;&gt;
+You are near the border and you see that there border partol facing the other way do you [[go for it-&gt;You are kidnapped]] or [[wait-&gt;You made it!]]</tw-passagedata><tw-passagedata pid="22" name="Hotel" tags="" position="456,548" size="100,100">(set:$health to 100,$strength to 100)
+You traveled $miles miles.You have reached to a small motel and sleeped in. You have $strength strength and $health health. When you wake up, you encounter a group that has offered you to come with them. They promised you that they would provide transportation to send you to your destination. Do you (link-goto:&quot;take it&quot;,&quot;Reynosa&quot;) or (link:&quot;leave it&quot;)[You say no and continue to [[Corboda]] or [[Veracruz]]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
