@@ -28,7 +28,6 @@ tw-passage{
 	font-family:arial;
   font-size: 2vh; font-size:2vw; font-size:2min; line-height:normal;}
 tw-story{
-  background-color: pink;
   color: white;}
 tw-link{
   color:green;}
@@ -186,12 +185,12 @@ You are {
 (put: State.variables[&quot;health&quot;] - 30 into $health ,State.variables[&quot;strength&quot;] - 40 into $strength)
 &lt;img src=&quot;https://lindafiles.yolasite.com/resources/Tapa.png&quot;&gt;
 
-You traveled $miles miles. You have $health health and $strength strength. It was a long journey. Do you want rest up to [[Stay In -&gt; Motel]] a hotel before going to [[Oaxaco]] or do you want to continue?</tw-passagedata><tw-passagedata pid="4" name=" Motel" tags="hotel" position="626,257" size="100,100">(set:$health to 100)
-(set:$strength to 100)
-You have reached to a small motel and sleeped in. You have $strength strength and $health health. You set off to [[Oaxaco]].</tw-passagedata><tw-passagedata pid="5" name="Oaxaco" tags="oax" position="675,75" size="100,100">(put: State.variables[&quot;miles&quot;] +420 into $miles, State.variables[&quot;health&quot;]-50 into $health, 
-State.variables[&quot;strength&quot;]-60 into $strength)
+You traveled $miles miles. You have $health health and $strength strength. It was a long journey. Do you want rest up to [[Stay In -&gt; Motel]] a hotel before going to [[Oaxaco]] or do you want to continue?</tw-passagedata><tw-passagedata pid="4" name=" Motel" tags="hotel" position="626,257" size="100,100">(set:$health to 100,$strength to 100)
+You have reached to a small motel and sleeped in. You have $strength strength and $health health. You set off to [[Oaxaco]].</tw-passagedata><tw-passagedata pid="5" name="Oaxaco" tags="oax" position="675,75" size="100,100">(put: State.variables[&quot;miles&quot;] +420 into $miles, State.variables[&quot;health&quot;]-40 into $health, 
+State.variables[&quot;strength&quot;]-50 into $strength)
 &lt;img src=&quot;https://lindafiles.yolasite.com/resources/Oax.png&quot;&gt;
-You have traveled $miles miles. You have exausted yourself. Your health is $health and strength is $strength. You must rest up till you make the journey. Go to [[Motel]].</tw-passagedata><tw-passagedata pid="6" name="Motel" tags="hotel" position="846,88" size="100,100">Before you meet buy a room to sleep in, you encounter a group that has offered you to come with them. They promised you that they would provide transportation to send you to your destination. Do you (link-goto:&quot;take it&quot;,&quot;Nogales&quot;) or (link:&quot;leave it&quot;)[You say no and continue to [[Puebla]]]</tw-passagedata><tw-passagedata pid="7" name="Nogales" tags="nog" position="1370,132" size="100,100">&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Nogales.png&quot;&gt;
+You have traveled $miles miles. You have exausted yourself. Your health is $health and strength is $strength. You must rest up till you make the journey. Go to [[Motel]].</tw-passagedata><tw-passagedata pid="6" name="Motel" tags="hotel" position="846,88" size="100,100">(set:$health to 100, $strength to 100)
+Before you meet buy a room to sleep in, you encounter a group that has offered you to come with them. They promised you that they would provide transportation to send you to your destination. Do you (link-goto:&quot;take it&quot;,&quot;Nogales&quot;) or (link:&quot;leave it&quot;)[You say no and continue to [[Puebla]]]</tw-passagedata><tw-passagedata pid="7" name="Nogales" tags="nog" position="1370,132" size="100,100">&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Nogales.png&quot;&gt;
 They drop of you off here because of how they didn&#39;t have any passport to drive you through the border so they drop you off. You walk to the border fence and see that the border patrol is face the other direction where you at. Do you [[go for it-&gt;You are kidnapped]] or [[wait-&gt;You made it!]]</tw-passagedata><tw-passagedata pid="8" name="Puebla" tags="puebla" position="825,272" size="100,100">(put:State.variables[&quot;miles&quot;] + 330 into $miles, State.variables[&quot;health&quot;] -20 into $health, State.variables[&quot;strength&quot;] - 30 into $strength)
 &lt;img src=&quot;https://lindafiles.yolasite.com/resources/Puebla.png&quot;&gt;
 You have arrived to Puebla. You traveled $miles miles. You have $health health and $strength strength. You decided to continue to [[Mexico City]] because how not far it is.</tw-passagedata><tw-passagedata pid="9" name="You are kidnapped" tags="arrested" position="1576,47" size="100,100">{(if: $r is 1)[Your mom died from cancer. You have been sent back home, hopeless. You killed yourself the next month.]
@@ -231,9 +230,9 @@ You traveled $miles miles. You have $health health and $strength strength.  You 
 You traveled $miles miles. You have $health health and $strength strength.  You rest up before taking the trip to [[Reynosa]].</tw-passagedata><tw-passagedata pid="19" name="Reynosa" tags="rey" position="1423,453" size="100,100">(put: State.variables[&quot;miles&quot;] + 490 into $miles, State.variables[&quot;health&quot;] +50 into $health, State.variables[&quot;strength&quot;] +50 into $strength)
 &lt;img src=&quot;https://lindafiles.yolasite.com/resources/Rey.png&quot;&gt;
 You are near the border and you see that there border partol facing the other way do you [[go for it-&gt;You are kidnapped]] or [[wait-&gt;You made it!]]
-</tw-passagedata><tw-passagedata pid="20" name="Corboda" tags="corb" position="602,446" size="100,100">(put: State.variables[&quot;miles&quot;] + 220 into $miles)
-(put: State.variables[&quot;health&quot;] -30 into $health)
-(put: State.variables[&quot;strength&quot;] -30 into $strength)
+</tw-passagedata><tw-passagedata pid="20" name="Corboda" tags="corb" position="658,402" size="100,100">(put: State.variables[&quot;miles&quot;] + 220 into $miles)
+(put: State.variables[&quot;health&quot;] -15 into $health)
+(put: State.variables[&quot;strength&quot;] -15 into $strength)
 &lt;img src=&quot;https://lindafiles.yolasite.com/resources/Cord.png&quot;&gt;
 You traveled $miles miles. You have $health health and $strength strength.  You keep going to [[Puebla]].</tw-passagedata><tw-passagedata pid="21" name="Cuidad Juarez" tags="cuid" position="1305,357" size="100,100">&lt;img src=&quot;https://lindafiles.yolasite.com/resources/Cuid.png&quot;&gt;
 You are near the border and you see that there border partol facing the other way do you [[go for it-&gt;You are kidnapped]] or [[wait-&gt;You made it!]]</tw-passagedata><tw-passagedata pid="22" name="Hotel" tags="" position="456,548" size="100,100">(set:$health to 100,$strength to 100)
